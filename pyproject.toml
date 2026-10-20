@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "archify-py"
+version = "0.1.0"
+description = "Zero-dependency Interactive SVG and HTML Architecture Visualizer for Software Projects"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "apravint", email = "apravint@users.noreply.github.com" },
+]
+keywords = ["architecture", "visualization", "svg", "html", "developer-tools", "diagrams", "code-metrics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Documentation",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+archify = "archify.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/archify"]
